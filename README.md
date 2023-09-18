@@ -46,6 +46,15 @@ Other inspirations:
 * neovim 0.5.0+ required
 * install using your favorite plugin manager ([`packer.nvim`](https://github.com/wbthomason/packer.nvim) in this example)
 
+This is my current installed version:
+
+```
+NVIM v0.9.1
+Build type: Release
+LuaJIT 2.1.0-beta3
+```
+
+
 ```lua
 use ("jumanbar/tocnavigator.nvim")
 ```
