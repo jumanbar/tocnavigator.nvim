@@ -18,7 +18,7 @@ First time creating a neovim plugin.
 
 It is a very simple plugin, and it currently works well enough in a very limited set of examples from my personal work. It doesn't use any dependency, which is good, but also makes it more plain.
 
-## The motivation
+## Motivation
 
 I'm an R programmer, and I use RStudio a lot. A key feature that makes my life much easier when using this IDE is the [RStudio document outlines](https://www.natedayta.com/2019/12/25/owning-outlines-in-rstudio/)
 
