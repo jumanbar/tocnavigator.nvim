@@ -71,7 +71,9 @@ vim.keymap.set("n", "<leader>n", n.toggle_toc_navigator)
 - Markdown: this is an exception, so instead of using the `vim.bo.commentstring` variable, it should just use `#`
 
 
-- Telescope-like features? I mean, that thing where a small window shows the content of what you are looking for...
+- Telescope-like features? A **Preview** window would be amazing:
+
+![](example_telescope.png)
 
 
 - Isn't it more smart to find comments using treesitter or something similar? I don't know how to do that, or even if it is possible.
