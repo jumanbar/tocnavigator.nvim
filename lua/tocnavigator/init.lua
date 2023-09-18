@@ -7,6 +7,9 @@ local position = 1
 Win = nil
 Win_orig = nil
 
+-- vim.cmd [[ hi def link WhidHeader      Number ]]
+vim.cmd [[ hi def link WhidSubHeader   Identifier ]]
+
 --- get_toc ========
 local function get_toc(bufnr)
     local out = {}
@@ -142,7 +145,7 @@ local function fill_view(width_num)
 
     vim.api.nvim_buf_clear_namespace(buf, -1, 0, -1)
     vim.api.nvim_win_set_cursor(Win, { position, 0 })
-    vim.api.nvim_buf_add_highlight(buf, -1, 'whidSubHeader', position - 1, 0, -1)
+    vim.api.nvim_buf_add_highlight(buf, -1, 'WhidSubHeader', position - 1, 0, -1)
     vim.api.nvim_buf_set_option(buf, 'modifiable', false)
 end
 
@@ -161,7 +164,7 @@ end
 local function update_pos()
     local toc_pos = vim.api.nvim_win_get_cursor(Win)
     vim.api.nvim_buf_clear_namespace(buf, -1, 0, -1)
-    vim.api.nvim_buf_add_highlight(buf, -1, 'whidSubHeader', toc_pos[1] - 1, 0, -1)
+    vim.api.nvim_buf_add_highlight(buf, -1, 'WhidSubHeader', toc_pos[1] - 1, 0, -1)
     position = toc_pos[1]
 end
 
