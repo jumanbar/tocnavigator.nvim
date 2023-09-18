@@ -194,7 +194,7 @@ local function toggle_toc_navigator()
         buf,
         "n",
         "gg",
-        "gg<Cmd>lua require('lua.navigator').update_pos()<CR>",
+        "gg<Cmd>lua require('tocnavigator').update_pos()<CR>",
         { silent = true }
     )
 
@@ -202,7 +202,7 @@ local function toggle_toc_navigator()
         buf,
         "n",
         "G",
-        "G<Cmd>lua require('lua.navigator').update_pos()<CR>",
+        "G<Cmd>lua require('tocnavigator').update_pos()<CR>",
         { silent = true }
     )
 
@@ -210,7 +210,7 @@ local function toggle_toc_navigator()
         buf,
         "n",
         "k",
-        "k<Cmd>lua require('lua.navigator').update_pos()<CR>",
+        "k<Cmd>lua require('tocnavigator').update_pos()<CR>",
         { silent = true }
     )
 
@@ -218,7 +218,7 @@ local function toggle_toc_navigator()
         buf,
         "n",
         "j",
-        "j<Cmd>lua require('lua.navigator').update_pos()<CR>",
+        "j<Cmd>lua require('tocnavigator').update_pos()<CR>",
         { silent = true }
     )
 
@@ -226,7 +226,7 @@ local function toggle_toc_navigator()
         buf,
         "n",
         "<C-c>",
-        "<Cmd>lua require('lua.navigator').close_window()<CR>",
+        "<Cmd>lua require('tocnavigator').close_window()<CR>",
         { silent = true }
     )
 
@@ -234,7 +234,7 @@ local function toggle_toc_navigator()
         buf,
         "n",
         "<Esc>",
-        "<Cmd>lua require('lua.navigator').close_window()<CR>",
+        "<Cmd>lua require('tocnavigator').close_window()<CR>",
         { silent = true }
     )
 
@@ -242,7 +242,7 @@ local function toggle_toc_navigator()
         buf,
         "n",
         "q",
-        "<Cmd>lua require('lua.navigator').close_window()<CR>",
+        "<Cmd>lua require('tocnavigator').close_window()<CR>",
         { silent = true }
     )
 
@@ -250,7 +250,7 @@ local function toggle_toc_navigator()
         buf,
         "n",
         "<CR>",
-        "<Cmd>lua require('lua.navigator').go_to_line()<CR>",
+        "<Cmd>lua require('tocnavigator').go_to_line()<CR>",
         { silent = true }
     )
 end
