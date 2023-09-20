@@ -1,11 +1,23 @@
 -- Comentario doc ======
 local q = require("lua.tocnavigator.queries")
-
 -- local x = vim.cmd [[BufReadCmd lua/tocnavigator/tests/test.md]]
-local f = io.popen("lua/tocnavigator/tests/test.md", "r")
-local s = f:read("*a")
 
-print(vim.inspect(x))
+local find_buffer_by_name = function(name)
+    for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+        local buf_name = vim.api.nvim_buf_get_name(buf)
+        print(buf_name)
+        if buf_name == name then
+            print('este')
+            return buf
+        end
+    end
+    return -1
+end
+local bufnr = find_buffer_by_name('/home/juan/Nvim/tocnavigator.nvim/lua/tocnavigator/tests/test.md')
+-- local bufnr = vim.api.nvim_get_current_buf()
+print('test.md', bufnr)
+print('test.md name', vim.api.nvim_buf_get_name(bufnr))
+
 local defaults = {
     after = "normal zt",
     r = {
@@ -43,7 +55,6 @@ local function foo()
 end
 
 --- Otro punto
-local bufnr = vim.api.nvim_get_current_buf()
 local ft = vim.filetype.match({ buf = bufnr })
 print("FileType:", ft)
 
@@ -59,7 +70,7 @@ local queries = q[ft]
 local cpt = ""
 local txt = ""
 local node_type = ""
-print(vim.inspect(queries))
+-- print(vim.inspect(queries))
 local out = {}
 for i, query in pairs(queries) do
     local qparsed = vim.treesitter.query.parse(ft, query)
@@ -69,7 +80,7 @@ for i, query in pairs(queries) do
         -- print(cpt)
         txt = vim.treesitter.get_node_text(node, bufnr)
         node_type = node:type()
-        print(node:type())
+        -- print(node:type())
         if i == "toc_comments" then
             txt = string.sub(txt, defaults[ft].cmslen + 1)
         end
