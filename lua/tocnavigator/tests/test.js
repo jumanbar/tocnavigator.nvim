@@ -2,7 +2,7 @@
 
 var a = "Totoro";
 
-function tata(str) {
+function foo(str) {
     console.log(str.length());
 }
 

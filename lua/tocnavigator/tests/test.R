@@ -6,7 +6,7 @@ unaVariable <- seq(-10, 10, .01)
 ## Print =======
 print(distinct(iris, Species))
 
-papa <- function(x) {
+foo <- function(x) {
   x ^ 6 - 2
 }
 
