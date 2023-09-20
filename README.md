@@ -1,8 +1,8 @@
 <div align="center">
 
-# TOC Navigator for NeoVim
+# A basic TOC Navigator for NeoVim
 
-##### Big source files made easy...
+##### Because I really like this feature in RStudio...
 
 [![Lua](https://img.shields.io/badge/Lua-blue.svg?style=for-the-badge&logo=lua)](http://www.lua.org)
 [![Neovim](https://img.shields.io/badge/Neovim%200.5+-green.svg?style=for-the-badge&logo=neovim)](https://neovim.io)
@@ -14,9 +14,9 @@ Plugin neovim for making a TOC navigator, similar to the one in RStudio
 
 ## WIP
 
-First time creating a neovim plugin.
+It is a very simple plugin, and it currently works well enough in a very limited set of examples from my personal work (in Lua, R, Python files, it works OK). It doesn't use any dependency, which is good, but also makes it more plain.
 
-It is a very simple plugin, and it currently works well enough in a very limited set of examples from my personal work. It doesn't use any dependency, which is good, but also makes it more plain.
+Disclaimer: I'm currently working on implementing a treesitter based approach.
 
 ## Motivation
 
