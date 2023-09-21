@@ -28,10 +28,8 @@ Header 2
 Whatever (2)
 
 <!--
-([( section 
-  (atx_heading
-    (_) @atx_marker
-    heading_content: (inline) @heading))
+([
+  (section (atx_heading) @heading)
 
 (
 setext_heading

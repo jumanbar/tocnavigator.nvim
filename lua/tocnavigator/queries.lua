@@ -71,10 +71,7 @@ M.python = {
 M.markdown = {
     headings = [[
         ([
-          (section 
-            (atx_heading
-              (_) @atx_marker
-              heading_content: (inline) @heading))
+          (section (atx_heading) @heading)
 
           (setext_heading
             heading_content: (paragraph) @subth

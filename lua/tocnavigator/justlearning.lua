@@ -89,7 +89,7 @@ for i, query in pairs(queries) do
             txt = string.sub(txt, defaults[ft].cmslen + 1)
         end
         local row1, _, row2, _ = node:range()
-        -- Verificar que no sea comentario de bloque (al menos con javascript funciona)
+        -- Verify that it is not a block comment
         if (i == "toc_comments" and row1 == row2) or i ~= "toc_comments" then
             table.insert(out, { type = i, node_type = node_type, line = row1 + 1, text = vim.trim(txt) })
         end
@@ -100,5 +100,40 @@ table.sort(out, function(a, b)
     return a.line < b.line
 end)
 
+local function processMD(t)
+    local prefix = ""
+    local suffix = ""
+    for i in pairs(t) do
+        if t[i].node_type == "paragraph" then
+            for j in pairs(t) do
+                if t[j].line == t[i].line + 1 and string.match(t[j].node_type, "1") then
+                    -- t[i].text = "" .. t[i].text
+                    t[j] = nil
+                    break
+                end
+                if t[j].line == t[i].line + 1 and string.match(t[j].node_type, "2") then
+                    t[i].text = "  " .. t[i].text
+                    t[j] = nil
+                    break
+                end
+            end
+        else
+            prefix = string.gsub(string.match(t[i].text, "(#+)"), "#", "  ")
+            suffix = string.match(t[i].text, "^#+%s*(.*)")
+            t[i].text = string.sub(prefix .. suffix, 3)
+        end
+    end
+
+    return t
+end
+
+if ft == "markdown" then
+    out = processMD(out)
+end
+
 print("------------")
-print(vim.inspect(out))
+--print(vim.inspect(out))
+
+for i in pairs(out) do print(out[i].text) end
+
+
