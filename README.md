@@ -86,3 +86,5 @@ vim.keymap.set("n", "<leader>n", n.toggle_toc_navigator)
 
 
 - Isn't it more smart to find comments using treesitter or something similar? I don't know how to do that, or even if it is possible.
+
+- Set update_view to listen to movement events and then update position and highlighting. Set different highlight groups according to identity of marker (ie: toc_comments and funtions, ATM)
