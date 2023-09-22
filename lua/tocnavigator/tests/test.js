@@ -2,6 +2,7 @@
 
 var a = "Totoro";
 
+// ## A function here ---------
 function foo(str) {
     console.log(str.length());
 }
@@ -18,5 +19,5 @@ tata(a);
 // A ver...
 
 
-// EL FIN ======
+// # EL FIN ======
 

@@ -1,15 +1,27 @@
 local M = {}
 
-M.r = {
+M.bash = {
 
     toc_comments = [[
         ((comment) @toc_comment (#match? @toc_comment "[-=]{4,}\s*$"))
     ]],
 
     functions = [[
-        (left_assignment
-          name: (identifier) @fun
-          value: (function_definition) @def)
+        (function_definition
+          name: (word) @fun)
+    ]]
+
+}
+
+M.javascript = {
+
+    toc_comments = [[
+        ((comment) @toc_comment (#match? @toc_comment "[-=]{4,}\s*$"))
+    ]],
+
+    functions = [[
+        (function_declaration
+            name: (identifier) @fun )
     ]]
 
 }
@@ -30,6 +42,18 @@ M.lua = {
 
 }
 
+M.markdown = {
+    headings = [[
+        ([
+          (section (atx_heading) @heading)
+
+          (setext_heading
+            heading_content: (paragraph) @subth
+            (_) @suby)
+        ])
+    ]]
+}
+
 M.php = {
 
     toc_comments = [[
@@ -39,19 +63,6 @@ M.php = {
     functions = [[
         (function_definition
             name: (name) @fun )
-    ]]
-
-}
-
-M.javascript = {
-
-    toc_comments = [[
-        ((comment) @toc_comment (#match? @toc_comment "[-=]{4,}\s*$"))
-    ]],
-
-    functions = [[
-        (function_declaration
-            name: (identifier) @fun )
     ]]
 
 }
@@ -68,16 +79,18 @@ M.python = {
     ]]
 }
 
-M.markdown = {
-    headings = [[
-        ([
-          (section (atx_heading) @heading)
+M.r = {
 
-          (setext_heading
-            heading_content: (paragraph) @subth
-            (_) @suby)
-        ])
+    toc_comments = [[
+        ((comment) @toc_comment (#match? @toc_comment "[-=]{4,}\s*$"))
+    ]],
+
+    functions = [[
+        (left_assignment
+          name: (identifier) @fun
+          value: (function_definition))
     ]]
+
 }
 
 return M

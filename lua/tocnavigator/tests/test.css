@@ -1,0 +1,29 @@
+.class1 {
+      background-color: DarkRed;
+      color: white;
+      font-size: 140%;
+      padding: 5px;
+      border-radius: 10px;
+    }
+
+/* */
+element.class2 {
+  border-radius: 15px;
+  background-color: #3c8dbc;
+  color: white;
+  /* font-family: Courier New; */
+  font-size: 200%;
+  padding: 18px;
+  /* border: 2px solid lightgray; */
+}
+
+/* */
+element {
+  font-weight: 900;
+  font-size: larger;
+}
+
+/* */
+#id {
+    font-size: larger;
+}
